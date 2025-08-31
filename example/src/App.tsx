@@ -1,20 +1,37 @@
-import { Text, View, StyleSheet } from 'react-native';
-import { multiply } from 'react-native-pop-toast';
+/* eslint-disable react-native/no-inline-styles */
 
-const result = multiply(3, 7);
+import { Button, View } from 'react-native';
+import { ToastProvider, useToast } from 'react-native-pop-toast';
+
+const HomeScreen = () => {
+  const { showToast } = useToast();
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 5,
+      }}
+    >
+      <Button
+        title="Success"
+        onPress={() => showToast('Successful!', 'success')}
+      />
+      <Button
+        title="Error"
+        onPress={() => showToast('An error occurred!', 'error')}
+      />
+      <Button title="Info" onPress={() => showToast('Information message')} />
+    </View>
+  );
+};
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <ToastProvider>
+      <HomeScreen />
+    </ToastProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

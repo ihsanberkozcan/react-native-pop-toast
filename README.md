@@ -12,21 +12,54 @@ npm install react-native-pop-toast
 
 ## Usage
 
+App.tsx
 
 ```js
-import { multiply } from 'react-native-pop-toast';
 
-// ...
+  import { ToastProvider } from 'react-native-pop-toast';
 
-const result = await multiply(3, 7);
+  ...
+
+  <ToastProvider>
+    <HomeScreen />
+  </ToastProvider>
+
+  ...
+
+
 ```
 
+HomeScreen.tsx
 
-## Contributing
+```js
+  import { useToast } from 'react-native-pop-toast';
 
-- [Development workflow](CONTRIBUTING.md#development-workflow)
-- [Sending a pull request](CONTRIBUTING.md#sending-a-pull-request)
-- [Code of conduct](CODE_OF_CONDUCT.md)
+  ...
+
+  const { showToast } = useToast();
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 5,
+      }}
+    >
+      <Button
+        title="Success"
+        onPress={() => showToast('Successful!', 'success')}
+      />
+      <Button
+        title="Error"
+        onPress={() => showToast('An error occurred!', 'error')}
+      />
+      <Button title="Info" onPress={() => showToast('Information message')} />
+    </View>
+  );
+```
+
 
 ## License
 
