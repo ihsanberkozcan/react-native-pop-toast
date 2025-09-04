@@ -1,11 +1,10 @@
+
 # React Native Pop Toast
 
 React Native Pop Toast is a small library to show quick, animated toast messages in your app. Easy to use and lightweight.
 
+<img src="https://github.com/user-attachments/assets/c5f5e4f3-c13d-4efd-b977-0e0bac3332de" width="250" alt="React Native Pop Toast" />
 
-
-
-https://github.com/user-attachments/assets/9ccd060a-fa63-4fab-af87-3c0b72f94703
 
 
 ## Installation
